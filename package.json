@@ -1,14 +1,14 @@
 {
-  "name": "san-player",
+  "name": "vui-demo",
   "version": "0.1.0",
   "private": true,
-  "main": "lib/san-player.umd.min.js",
+  "main": "lib/vui-demo.umd.min.js",
   "scripts": {
     "init": "npm install commitizen cz-conventional-changelog conventional-changelog-cli -S -D  && npm run bootstrap",
     "bootstrap": "npm install",
     "initlog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "addlog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "lib": "vue-cli-service build --target lib --name san-player --dest lib packages/index.js",
+    "lib": "vue-cli-service build --target lib --name vui-demo --dest lib packages/index.js",
     "new:comp": "node scripts/create-comp.js && node build/build-entry.js",
     "del:comp": "node scripts/delete-comp.js && node build/build-entry.js",
     "dev": "vue-cli-service serve",
@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "normalize.css": "^8.0.1",
     "vue": "^2.6.11"
   },
   "devDependencies": {
