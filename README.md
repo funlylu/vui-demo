@@ -1,4 +1,5 @@
-# san-player
+# VUI-DEMO
+一个vue UI 组件库构建框架
 
 ## 安装依赖
 ```
