@@ -2,8 +2,15 @@
   "name": "san-player",
   "version": "0.1.0",
   "private": true,
+  "main": "lib/san-player.umd.min.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "init": "npm install commitizen -g && commitizen init cz-conventional-changelog --save-dev --save-exact && npm run bootstrap",
+    "bootstrap": "npm install",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "lib": "vue-cli-service build --target lib --name san-player --dest lib packages/index.js",
+    "new:comp": "node scripts/create-comp.js && node build/build-entry.js",
+    "del:comp": "node scripts/delete-comp.js && node build/build-entry.js",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
@@ -17,12 +24,23 @@
     "@vue/cli-service": "~4.5.13",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
+    "markdown-it-container": "^3.0.0",
+    "markdown-it-decorate": "^1.2.2",
+    "markdown-it-task-checkbox": "^1.0.6",
     "prettier": "^2.2.1",
+    "uppercamelcase": "^3.0.0",
+    "vue-markdown-loader": "^2.5.0",
     "vue-template-compiler": "^2.6.11"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
